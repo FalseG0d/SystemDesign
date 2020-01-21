@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'notify.apps.NotifyConfig',
     'report.apps.ReportConfig',
     'django.contrib.admin',
     'django.contrib.auth',
