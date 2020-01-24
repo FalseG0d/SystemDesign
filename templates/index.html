@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}" media="screen" />
 <link rel="stylesheet" type="text/css" href="{% static 'assets/css/responsive.css' %}" media="screen" />
 <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.bxslider.css' %}" media="screen" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="body_wrapper">
@@ -128,6 +129,23 @@
             <p class="news-letter-privacy">We do not spam. We value your privacy!</p>
           </div>
         </div>
+
+        <div class="single_sidebar">
+          <div class="news-letter">
+            <h2>Report an Outbreak</h2>
+            <p>Send a public notifications in no time!</p>
+            <form action="report" method="POST">
+             {% csrf_token %}
+              <input type="text" name="title" placeholder="Title"/>
+              <input type="text"   name="desc" placeholder="Descrition"/>
+              <input type="file" name="img" placeholder="Upload an image"/>
+              <input type="submit" value="SUBMIT" id="form-submit" />
+            </form>
+            <p class="news-letter-privacy">We do not spam. We value your privacy!</p>
+          </div>
+        </div>
+              
+
         <div class="single_sidebar">
           <div class="popular">
             <h2 class="title">Important</h2>
@@ -165,6 +183,7 @@
 <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script> 
 <script type="text/javascript" src="{% static 'assets/js/jquery.bxslider.js' %}"></script> 
 <script type="text/javascript" src="{% static 'assets/js/selectnav.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'assets/js/login.js' %}"></script>
 <script type="text/javascript">
 selectnav('nav', {
     label: '-Navigation-',

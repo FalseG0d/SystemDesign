@@ -7,6 +7,19 @@ class NewsType(models.Model):
     def __str__(self):
         return "%s" % (self.sect)
 
+class Uncertain(models.Model):
+    title = models.CharField(max_length=100)
+    pub_date = models.DateField()
+    desc=models.TextField()
+    image=models.ImageField(upload_to='pics')
+    sect = models.ForeignKey(NewsType, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['title']
+
+
 class News(models.Model):
     title = models.CharField(max_length=100)
     pub_date = models.DateField()
