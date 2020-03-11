@@ -29,8 +29,8 @@ def register(request):
                         smtp.ehlo()
                         smtp.starttls()
                         smtp.ehlo()
-
-                        smtp.login('techsurgenmridang.mait@gmail.com','Jaishreeram20')
+                        #Email must allow Secondary Applications
+                        smtp.login('Email','Password')
                         
                         username=name
                         to=email
@@ -40,7 +40,7 @@ def register(request):
                         body='Dear '+username+', This is to notify you about the confirmation of your registration for '+event
 
                         msg=f'Subject:{sub}\n\n{body}'
-                        smtp.sendmail('techsurgenmridang.mait@gmail.com',to,msg)
+                        smtp.sendmail('email',to,msg)
                                      
                 print(entry)
                 return redirect('/')
